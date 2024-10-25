@@ -11,3 +11,8 @@ struct Queue {
 	QueueElement* head;
 	QueueElement* back;
 };
+
+void createQueue(Queue* queue) {
+	queue->head = (Queue*)calloc(1, sizeof(Queue));
+	queue->back = (Queue*)calloc(1, sizeof(Queue));
+}
