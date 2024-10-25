@@ -27,10 +27,6 @@ int enqueue(Queue* queue, int value) {
 	return 0;
 }
 
-Queue* createQueue() {
-	return (Queue*)calloc(1, sizeof(Queue));
-}
-
 int dequeue(Queue* queue) {
 	Queue* tmp = queue->head;
 	int value = queue->head->value;
@@ -41,6 +37,11 @@ int dequeue(Queue* queue) {
 void deleteQueue(Queue* queue) {
 	while (queue->head != NULL) {
 		dequeue(queue);
-    }
+	}
 }
+
+Queue* createQueue() {
+	return (Queue*)calloc(1, sizeof(Queue));
+}
+
 
