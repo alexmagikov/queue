@@ -30,3 +30,17 @@ int enqueue(Queue* queue, int value) {
 Queue* createQueue() {
 	return (Queue*)calloc(1, sizeof(Queue));
 }
+
+int dequeue(Queue* queue) {
+	Queue* tmp = queue->head;
+	int value = queue->head->value;
+	queue->head = queue->head->next;
+	return value;
+}
+
+void deleteQueue(Queue* queue) {
+	while (queue->head != NULL) {
+		dequeue(queue);
+    }
+}
+
