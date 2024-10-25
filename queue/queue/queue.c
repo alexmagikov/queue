@@ -17,6 +17,10 @@ int enqueue(Queue* queue, int value) {
 	if (element == NULL) {
 		return -1;
 	}
+	if (queue->head == NULL && queue->back == NULL) {
+		queue->back = element;
+		queue->head = element;
+	}
 	element->value = value;
 	element->next = queue->back;
 	queue->back = element;
