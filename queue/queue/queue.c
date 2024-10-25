@@ -21,14 +21,16 @@ int enqueue(Queue* queue, int value) {
 		queue->back = element;
 		queue->head = element;
 	}
-	element->value = value;
-	element->next = queue->back;
-	queue->back = element;
+	else {
+		element->value = value;
+		element->next = queue->back;
+		queue->back = element;
+	}
 	return 0;
 }
 
 int dequeue(Queue* queue) {
-	Queue* tmp = queue->head;
+	QueueElement* tmp = queue->head;
 	int value = queue->head->value;
 	if (queue->head->next == NULL) {
 		queue->head = NULL;
@@ -37,6 +39,7 @@ int dequeue(Queue* queue) {
 	else {
 		queue->head = queue->head->next;
 	}
+	free(tmp);
 	return value;
 }
 
