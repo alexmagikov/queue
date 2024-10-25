@@ -30,7 +30,13 @@ int enqueue(Queue* queue, int value) {
 int dequeue(Queue* queue) {
 	Queue* tmp = queue->head;
 	int value = queue->head->value;
-	queue->head = queue->head->next;
+	if (queue->head->next == NULL) {
+		queue->head = NULL;
+		queue->back = NULL;
+	}
+	else {
+		queue->head = queue->head->next;
+	}
 	return value;
 }
 
