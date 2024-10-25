@@ -13,6 +13,14 @@ struct Queue {
 };
 
 int dequeue(Queue* queue) {
-	Queue* tmp = queue->back;
-	queue->back = queue->back->next;
+	Queue* tmp = queue->head;
+	int value = queue->head->value;
+	queue->head = queue->head->next;
+	return value;
+}
+
+void deleteQueue(Queue* queue) {
+	while (queue->head != NULL) {
+		dequeue(queue);
+    }
 }
