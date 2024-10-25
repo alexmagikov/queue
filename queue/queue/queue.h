@@ -2,4 +2,4 @@
 
 typedef struct Queue Queue; 
 
-void enqueue(Queue* queue, int value);
+int enqueue(Queue* queue, int value);
