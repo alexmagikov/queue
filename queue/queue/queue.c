@@ -19,7 +19,7 @@ void enqueue(Queue* queue, int value) {
 	queue->back = element;
 }
 
-void createQueue(Queue* queue) {
-	queue->head = (Queue*)calloc(1, sizeof(Queue));
-	queue->back = (Queue*)calloc(1, sizeof(Queue));
+Queue* createQueue() {
+	Queue* queue = (Queue*)calloc(1, sizeof(Queue));
+	return queue;
 }
