@@ -18,3 +18,8 @@ void enqueue(Queue* queue, int value) {
 	element->next = queue->back;
 	queue->back = element;
 }
+
+void createQueue(Queue* queue) {
+	queue->head = (Queue*)calloc(1, sizeof(Queue));
+	queue->back = (Queue*)calloc(1, sizeof(Queue));
+}
