@@ -11,3 +11,8 @@ struct Queue {
 	QueueElement* head;
 	QueueElement* back;
 };
+
+int dequeue(Queue* queue) {
+	Queue* tmp = queue->back;
+	queue->back = queue->back->next;
+}
